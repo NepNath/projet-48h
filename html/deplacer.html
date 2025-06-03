@@ -31,10 +31,10 @@
       <p>Découvrez tous les moyens de transport disponibles</p>
 
       <form id="itineraire-form" class="itineraire-form">
-        <label for="depart">Départ :</label>
+        <label for="depart">Station vélo départ :</label>
         <input type="text" id="depart" name="depart" placeholder="Ex: Quinconces" required />
 
-        <label for="arrivee">Arrivée :</label>
+        <label for="arrivee">Station vélo arrivée :</label>
         <input type="text" id="arrivee" name="arrivee" placeholder="Ex: Berges du Lac" required />
 
         <label for="heure">Heure de départ :</label>
@@ -57,12 +57,17 @@
     const arrivee = form.arrivee.value;
     const heure = form.heure.value;
 
+    // Simulation disponibilité vélos et places
+    const dispoVelosDepart = Math.floor(Math.random() * 10) + 1; // vélos disponibles au départ
+    const dispoPlacesArrivee = Math.floor(Math.random() * 10) + 1; // places libres à l'arrivée
+
     resultats.innerHTML = `
-      <p>Itinéraire de <strong>${depart}</strong> à <strong>${arrivee}</strong> à partir de <strong>${heure}</strong> :</p>
+      <p>Itinéraire vélo de <strong>${depart}</strong> à <strong>${arrivee}</strong> à partir de <strong>${heure}</strong> :</p>
       <ul>
-        <li>Prendre le tram ligne B direction Berges du Lac</li>
-        <li>Changement à Quinconces</li>
-        <li>Arrivée prévue à <strong>${arrivee}</strong> à <strong>${heure}</strong></li>
+        <li>Station de départ : <strong>${depart}</strong> - <em>${dispoVelosDepart} vélos disponibles</em></li>
+        <li>Station d'arrivée : <strong>${arrivee}</strong> - <em>${dispoPlacesArrivee} places libres</em></li>
+        <li>Durée estimée : environ 15 minutes</li>
+        <li>Bonne route ! 🚲</li>
       </ul>
     `;
   });

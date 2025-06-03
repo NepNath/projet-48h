@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Accueil</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- API Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfPK8OGqMEzai0_v4KM62q1F5fbRyN8c0&callback=initMap" async defer></script>
+
+  <style>
+    /* Styles pour la liste des stations */
+    .station-list {
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-top: 1px solid #ccc;
+    }
+
+    .station-names li {
+      margin: 5px 0;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -24,8 +41,6 @@
 
   <!-- Section image de fond avec texte et blocs -->
   <section class="hero-image">
-
-    <!-- Blocs positionnés à droite, au-dessus de l'image -->
     <div class="info-section">
       <div class="info-block">
         <h3>Horaires</h3>
@@ -42,32 +57,72 @@
         <h4>Heure de départ</h4><br>
       </div>
     </div>
-
     <div class="reservation-button">
         <a href="#" class="btn-reserver">Réserver un vélo</a>
     </div>
-
   </section>
 
+  <!-- Carte avec stations -->
   <section class="map-section">
-  <h2>Carte des stations</h2>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.488207845203!2d-0.57918!3d44.837789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55287fc6403df9%3A0x9ffb03dd3c8496e7!2sBordeaux!5e0!3m2!1sfr!2sfr!4v1717321987000"
-    width="100%" height="400" style="border:0;" allowfullscreen loading="lazy">
-  </iframe>
+    <h2>Carte des stations</h2>
+    <div id="map" style="height: 400px; width: 100%; border-radius: 8px;"></div>
   </section>
+
+  <!-- Liste des stations -->
+  <section class="station-list">
+    <h2>Liste des stations</h2>
+    <ul id="station-names" class="station-names"></ul>
+  </section>
+
+  <!-- Alertes -->
   <section class="alertes-section">
     <h2>Alertes en temps réel</h2>
-       <ul>
-           <li>🟠 Ligne B perturbée entre Quinconces et Berges du Lac</li>
-           <li>🌧️ Pluie prévue ce soir à 18h — pensez à l’équipement !</li>
-           <li>🚧 Travaux sur la ligne 15 : arrêt modifié</li>
-        </ul>
-   </section>
+    <ul>
+      <li>🟠 Ligne B perturbée entre Quinconces et Berges du Lac</li>
+      <li>🌧️ Pluie prévue ce soir à 18h — pensez à l’équipement !</li>
+      <li>🚧 Travaux sur la ligne 15 : arrêt modifié</li>
+    </ul>
+  </section>
 
-   
+  <!-- Script Google Maps avec stations -->
+  <script>
+    function initMap() {
+      const center = { lat: 44.8378, lng: -0.5792 }; // Centre de Bordeaux
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: center,
+      });
 
+      // Exemple de tableau stations (à adapter selon ta source réelle)
+const stations = [
+  { name: "Station Tram A" },
+  { name: "Station Bus Central" },
+  { name: "Station Vélo Libre" },
+  { name: "Station TER Gare" },
+  { name: "Station Bateau Port" },
+  { name: "Station Metro Nord" },
+];
 
+// Fonction pour afficher les stations avec icônes
+const stationList = document.getElementById("station-names");
+
+stations.forEach((station) => {
+  let icon = "🚉"; // icône par défaut
+
+  const name = station.name.toLowerCase();
+  if (name.includes("tram")) icon = "🚊";
+  else if (name.includes("bus")) icon = "🚌";
+  else if (name.includes("vélo")) icon = "🚴";
+  else if (name.includes("ter")) icon = "🚆";
+  else if (name.includes("bateau") || name.includes("bato")) icon = "⛴️";
+
+  const li = document.createElement("li");
+  li.innerHTML = `<span class="station-icon">${icon}</span><span>${station.name}</span>`;
+  stationList.appendChild(li);
+});
+
+    }
+  </script>
 
 </body>
 </html>

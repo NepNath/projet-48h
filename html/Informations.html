@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- En-tête -->
   <header>
     <div class="header-container">
       <a href="index.html">
@@ -25,13 +26,79 @@
     </div>
   </header>
 
-  <!-- Fond avec image -->
+  <!-- Image d’en-tête -->
   <section class="hero-image">
     <div class="hero-content">
       <h1>Se déplacer dans Bordeaux</h1>
       <p>Découvrez tous les moyens de transport disponibles</p>
     </div>
   </section>
+
+  <!-- Section Alertes -->
+  <section class="alertes-section">
+    <h2>Alertes en cours</h2>
+    <ul>
+      <li>🚧 Ligne B : Tram interrompu entre Quinconces et Berges du Lac jusqu'à 16h</li>
+      <li>🚌 Ligne 10 : Retards prévus de 10-15 min en raison des travaux cours de la Somme</li>
+      <li>⚠️ Ligne A : Service réduit après 21h pour maintenance</li>
+    </ul>
+  </section>
+
+  <!-- Section FAQ -->
+  <section class="faq-section">
+    <h2>Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">🕘 Quels sont les horaires du tram en semaine ?</button>
+      <div class="faq-answer">
+        <p>Le service fonctionne de 5h à minuit du lundi au vendredi. Une fréquence de 5 à 10 minutes selon l’heure.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">🎫 Où acheter un ticket TBM ?</button>
+      <div class="faq-answer">
+        <p>Vous pouvez acheter un ticket via l’application TBM, sur les bornes automatiques ou en agences.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">🧳 Puis-je voyager avec un vélo ?</button>
+      <div class="faq-answer">
+        <p>Oui, en dehors des heures de pointe et uniquement dans les trams. Le vélo doit être maintenu à la main.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Informations ajoutée -->
+  <section class="informations-section">
+    <h2>Informations utiles</h2>
+
+    <div class="information-item">
+      <h3>Accessibilité</h3>
+      <p>Toutes les lignes de tram et la majorité des bus sont accessibles aux personnes à mobilité réduite.</p>
+    </div>
+
+    <div class="information-item">
+      <h3>Objets trouvés</h3>
+      <p>En cas de perte d’un objet, contactez le service client ou rendez-vous en agence.</p>
+    </div>
+
+    <div class="information-item">
+      <h3>Application mobile</h3>
+      <p>L'application TBM vous permet de consulter les horaires, acheter des titres de transport et planifier vos trajets.</p>
+    </div>
+  </section>
+
+  <!-- JavaScript pour la FAQ -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
 </html>

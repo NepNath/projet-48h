@@ -522,3 +522,66 @@ Section Nos Offres
     grid-template-columns: 1fr;
   }
 }
+
+/* ------------------------------
+Section Informations (modifications ajoutées)
+------------------------------ */
+
+/* Conteneur principal de la section informations */
+.informations-section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Titre de la section */
+.informations-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #009FE3;
+  margin-bottom: 1.5rem;
+}
+
+/* Blocs individuels d'information */
+.information-item {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-left: 6px solid #009FE3;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.information-item:hover {
+  background-color: #f0f8ff;
+}
+
+/* Titres internes */
+.information-item h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphes */
+.information-item p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .informations-section {
+    padding: 1rem;
+  }
+
+  .information-item {
+    padding: 1rem;
+  }
+}

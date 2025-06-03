@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nos offres</title>
-  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
 
@@ -25,11 +25,65 @@
     </div>
   </header>
 
-  <!-- Fond avec image -->
   <section class="hero-image">
     <div class="hero-content">
-      <h1>Se déplacer dans Bordeaux</h1>
-      <p>Découvrez tous les moyens de transport disponibles</p>
+      <h1>Nos Offres TBM</h1>
+      <p>Découvrez toutes nos formules pour faciliter vos déplacements</p>
+    </div>
+  </section>
+
+  <section class="offres-catalogue">
+    <h2>Nos Offres</h2>
+
+    <div class="offres-filtres">
+      <button class="filtre-btn actif" data-categorie="tous">Tous</button>
+      <button class="filtre-btn" data-categorie="abonnements">Abonnements</button>
+      <button class="filtre-btn" data-categorie="tickets">Tickets</button>
+      <button class="filtre-btn" data-categorie="reductions">Réductions</button>
+    </div>
+
+    <div class="offres-list">
+      <article class="offre" data-categorie="abonnements">
+        <h3>Abonnement Mensuel</h3>
+        <p>Accès illimité aux transports pendant un mois.</p>
+        <p class="prix">35 €</p>
+        <button class="btn-acheter">Acheter</button>
+      </article>
+
+      <article class="offre" data-categorie="tickets">
+        <h3>Ticket Simple</h3>
+        <p>Voyage unique valable 1h30.</p>
+        <p class="prix">1,70 €</p>
+        <button class="btn-acheter">Acheter</button>
+      </article>
+
+      <article class="offre" data-categorie="reductions">
+        <h3>Pass Jeune</h3>
+        <p>Tarif réduit pour les moins de 26 ans.</p>
+        <p class="prix">20 € / mois</p>
+        <button class="btn-acheter">Acheter</button>
+      </article>
+
+      <article class="offre" data-categorie="abonnements">
+        <h3>Abonnement Annuel</h3>
+        <p>Économisez en vous abonnant pour toute l'année.</p>
+        <p class="prix">350 €</p>
+        <button class="btn-acheter">Acheter</button>
+      </article>
+
+      <article class="offre" data-categorie="tickets">
+        <h3>Ticket Jeune</h3>
+        <p>Tarif spécial pour les moins de 26 ans, valable 1h30.</p>
+        <p class="prix">1,00 €</p>
+        <button class="btn-acheter">Acheter</button>
+      </article>
+
+      <article class="offre" data-categorie="reductions">
+        <h3>Pass Senior</h3>
+        <p>Tarif réduit pour les plus de 65 ans.</p>
+        <p class="prix">15 € / mois</p>
+        <button class="btn-acheter">Acheter</button>
+      </article>
     </div>
   </section>
 

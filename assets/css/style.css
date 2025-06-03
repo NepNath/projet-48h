@@ -399,3 +399,126 @@ Modifications pour la page "Se déplacer"
     font-size: 1.8rem;
   }
 }
+
+/* ------------------------------
+Section Nos Offres
+------------------------------ */
+.offres-catalogue {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.offres-catalogue h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #009FE3;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Boutons filtres */
+.offres-filtres {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filtre-btn {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filtre-btn:hover {
+  background-color: #009FE3;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 159, 227, 0.4);
+}
+
+.filtre-btn.actif {
+  background-color: #009FE3;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 159, 227, 0.6);
+}
+
+/* Liste des offres */
+.offres-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Chaque offre */
+.offre {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.offre:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.offre h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #009FE3;
+  font-weight: 700;
+}
+
+.offre p {
+  flex-grow: 1;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Prix */
+.offre .prix {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #95C11F;
+  margin-bottom: 1.5rem;
+}
+
+/* Bouton acheter */
+.btn-acheter {
+  background-color: #95C11F;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-acheter:hover {
+  background-color: #7fa618;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .offres-list {
+    grid-template-columns: 1fr;
+  }
+}

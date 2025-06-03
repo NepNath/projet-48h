@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscription - TBM</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- Header identique -->
+  <header>
+    <div class="header-container">
+      <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/f/f5/Logo_TBM_2023.svg/2560px-Logo_TBM_2023.svg.png" alt="Logo TBM" class="logo" />
+      <nav class="main-nav">
+        <ul>
+          <li><a href="login.html" class="menu-gris">Connexion</a></li>
+          <li><a href="index.html" class="menu-gris">Accueil</a></li>
+          <li><a href="Se déplacer.html" class="menu-vert">Se déplacer</a></li>
+          <li><a href="Nos offres.html" class="menu-bleu">Nos offres</a></li>
+          <li><a href="Informations.html" class="menu-rouge">Informations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section d’inscription -->
+  <section class="login-section">
+    <div class="login-box">
+      <h2>Inscription</h2>
+      <form action="#" method="post">
+        <label for="username">Nom d’utilisateur :</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">S’inscrire</button>
+      </form>
+      <p>Déjà un compte ? <a href="login.html">Se connecter</a></p>
+      <p><a href="index.html">← Retour à l’accueil</a></p>
+    </div>
+  </section>
+</body>
+</html>

@@ -225,7 +225,6 @@ Login avec fond personnalisé + effet flottant
   background: linear-gradient(135deg, #ece9e6, #ffffff);
 }
 
-
 .login-box {
   background: white;
   padding: 2rem 3rem;
@@ -292,4 +291,111 @@ Login avec fond personnalisé + effet flottant
 
 .login-box a:hover {
   text-decoration: underline;
+}
+
+/* ------------------------------
+Modifications pour la page "Se déplacer"
+------------------------------ */
+
+/* Conteneur du contenu principal dans hero */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  color: #333;
+  text-align: center;
+}
+
+/* Titre et description dans hero */
+.hero-content h1 {
+  color: #009FE3;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Formulaire itinéraire */
+.itineraire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.itineraire-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.itineraire-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.itineraire-form button {
+  background-color: #95C11F;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.itineraire-form button:hover {
+  background-color: #7fa618;
+}
+
+/* Résultats itinéraire */
+#resultats-itineraire {
+  max-width: 600px;
+  margin: 20px auto 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #333;
+  box-sizing: border-box;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#resultats-itineraire ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .itineraire-form {
+    max-width: 90%;
+  }
+
+  #resultats-itineraire {
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
 }

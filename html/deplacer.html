@@ -2,15 +2,15 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Se déplacer</title>
-  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
 
   <header>
     <div class="header-container">
-      <a href="index.html">
+      <a href="/">
         <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/f/f5/Logo_TBM_2023.svg/2560px-Logo_TBM_2023.svg.png" alt="Logo TBM" class="logo" />
       </a>
       <nav class="main-nav">
@@ -25,13 +25,48 @@
     </div>
   </header>
 
-  <!-- Fond avec image -->
   <section class="hero-image">
     <div class="hero-content">
       <h1>Se déplacer dans Bordeaux</h1>
       <p>Découvrez tous les moyens de transport disponibles</p>
+
+      <form id="itineraire-form" class="itineraire-form">
+        <label for="depart">Départ :</label>
+        <input type="text" id="depart" name="depart" placeholder="Ex: Quinconces" required />
+
+        <label for="arrivee">Arrivée :</label>
+        <input type="text" id="arrivee" name="arrivee" placeholder="Ex: Berges du Lac" required />
+
+        <label for="heure">Heure de départ :</label>
+        <input type="time" id="heure" name="heure" required />
+
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <div id="resultats-itineraire"></div>
     </div>
   </section>
+
+<script>
+  const form = document.getElementById('itineraire-form');
+  const resultats = document.getElementById('resultats-itineraire');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const depart = form.depart.value;
+    const arrivee = form.arrivee.value;
+    const heure = form.heure.value;
+
+    resultats.innerHTML = `
+      <p>Itinéraire de <strong>${depart}</strong> à <strong>${arrivee}</strong> à partir de <strong>${heure}</strong> :</p>
+      <ul>
+        <li>Prendre le tram ligne B direction Berges du Lac</li>
+        <li>Changement à Quinconces</li>
+        <li>Arrivée prévue à <strong>${arrivee}</strong> à <strong>${heure}</strong></li>
+      </ul>
+    `;
+  });
+</script>
 
 </body>
 </html>
